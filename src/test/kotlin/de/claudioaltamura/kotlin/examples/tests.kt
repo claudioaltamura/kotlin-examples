@@ -7,4 +7,8 @@ class TestSource {
     @Test fun testGreeting() {
         assertEquals("Hello, world!", getGreeting())
     }
+
+    @Test fun testStart() {
+        assertEquals("OK", start())
+    }
 }
