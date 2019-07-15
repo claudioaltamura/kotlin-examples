@@ -2,14 +2,24 @@ package de.claudioaltamura.kotlin.examples
 
 class Employee(var name: String, val id : Int) {
 
+
     override fun equals(other: Any?): Boolean {
-        if(other == null || other !is Employee)
-            return false
-        return id == other.id && name==other.name
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Employee
+
+        if (name != other.name) return false
+        if (id != other.id) return false
+
+        return true
     }
 
-    override fun hashCode(): Int =
-            31+id * name.hashCode()
+    override fun hashCode(): Int {
+        var result = name.hashCode()
+        result = 31 * result + id
+        return result
+    }
 
     override fun toString(): String {
         return "Employee(name='$name', id=$id)"
