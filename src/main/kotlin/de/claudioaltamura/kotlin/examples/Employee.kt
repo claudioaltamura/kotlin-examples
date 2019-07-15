@@ -11,5 +11,9 @@ class Employee(var name: String, val id : Int) {
     override fun hashCode(): Int =
             31+id * name.hashCode()
 
-    override fun toString() : String = name + "," + id
+    override fun toString(): String {
+        return "Employee(name='$name', id=$id)"
+    }
+
+
 }
