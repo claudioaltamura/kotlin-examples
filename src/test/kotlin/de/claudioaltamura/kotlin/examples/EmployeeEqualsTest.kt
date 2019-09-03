@@ -26,7 +26,6 @@ class EmployeeEqualsTest {
     println("===")
     println(employee1===employee2)
     println(employee1===employee3)
-
   }
 
 }

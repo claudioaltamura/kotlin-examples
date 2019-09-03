@@ -8,7 +8,7 @@ class SetTest {
   @Test
   fun contains() {
     val lang = languages()
-    lang.forEach { e -> println(e)}
+
     assertTrue(lang.contains("italian"))
   }
 
