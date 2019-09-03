@@ -2,7 +2,6 @@ package de.claudioaltamura.kotlin.examples
 
 class Employee(var name: String, val id : Int) {
 
-
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
@@ -24,6 +23,5 @@ class Employee(var name: String, val id : Int) {
     override fun toString(): String {
         return "Employee(name='$name', id=$id)"
     }
-
 
 }
