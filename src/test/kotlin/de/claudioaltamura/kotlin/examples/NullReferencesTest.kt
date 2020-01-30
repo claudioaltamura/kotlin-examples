@@ -1,7 +1,6 @@
 package de.claudioaltamura.kotlin.examples
 
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Test
 
 class NullReferencesTest {
@@ -20,7 +19,20 @@ class NullReferencesTest {
   @Test
   fun testNullReferences() {
     val str: String ? = null
-    str.let{println(it)}
+    str?.let{println(it)}
+  }
+
+  @Test
+  fun testNeverNull() {
+    val string: String? = "not null"
+    val stringNeverNull = string!!.toUpperCase()
+    assertEquals("NOT NULL", stringNeverNull)
+  }
+
+  @Test
+  fun testAMethodWithElvisOperator() {
+    assertEquals("test", aMethodWithElvisOperator("test"))
+    assertEquals("default", aMethodWithElvisOperator(null))
   }
 
 }
