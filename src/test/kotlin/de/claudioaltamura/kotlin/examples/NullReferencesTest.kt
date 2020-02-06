@@ -35,4 +35,12 @@ class NullReferencesTest {
     assertEquals("default", aMethodWithElvisOperator(null))
   }
 
+  @Test
+  fun testPersonAndAddress() {
+    val address = Address("street", "city", "12345")
+    val person = Person("Colt", address)
+
+    assertEquals("street", person?.address?.street)
+  }
+
 }
