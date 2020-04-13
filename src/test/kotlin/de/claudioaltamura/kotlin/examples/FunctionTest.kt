@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Assertions.*;
 class FunctionTest {
 
     @Test
-    fun `label multiply`() {
+    fun `label prints`() {
         assertEquals("label 1 * 2",label(1,2))
     }
 }
