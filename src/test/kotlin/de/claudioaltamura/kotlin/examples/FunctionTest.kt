@@ -12,4 +12,15 @@ class FunctionTest {
     fun `label prints`() {
         assertEquals("label 1 * 2",label(1,2))
     }
+
+    @Test
+    fun `prints first letter uppercase`() {
+        assertEquals("Hello", upperFirst("hello"))
+    }
+
+    @Test
+    fun `inline function`() {
+        assertEquals(4, someMethod(2,{"Test"}))
+    }
+
 }
