@@ -1,7 +1,6 @@
 package de.claudioaltamura.kotlin.examples
 
 import junit.framework.Assert.assertEquals
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 class ClassWithCompanionTest {
