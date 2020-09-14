@@ -6,4 +6,6 @@ examples with kotlin
 + open class
 + singelon with object
 + companion
-+ ...
++ interface 
+    + implementation
+    + anonymous
