@@ -1,4 +1,4 @@
-package de.claudioaltamura.kotlin.examples
+package de.claudioaltamura.kotlin.examples.inheritance
 
 fun main(args: Array<String>) {
     val child = ChildClass("child")

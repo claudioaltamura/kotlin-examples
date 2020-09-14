@@ -1,4 +1,6 @@
-package de.claudioaltamura.kotlin.examples
+package de.claudioaltamura.kotlin.examples.inheritance
+
+import de.claudioaltamura.kotlin.examples.ParentClass
 
 abstract class AbstractClass(name: String) : ParentClass(name) {
 
