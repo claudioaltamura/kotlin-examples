@@ -1,5 +1,6 @@
 package de.claudioaltamura.kotlin.examples.`interface`
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
@@ -21,4 +22,13 @@ class ExampleInterfaceTest {
 
         assertEquals(1, example.method(1))
     }
+
+  @Test
+  fun subInterface() {
+      val exampleInterface = AnotherImplementation("you")
+
+      assertThat(exampleInterface.anotherMethod("hello")).isEqualTo("HELLO YOU");
+
+  }
+
 }
