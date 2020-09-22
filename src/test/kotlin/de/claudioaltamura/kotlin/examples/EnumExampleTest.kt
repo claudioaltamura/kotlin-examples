@@ -1,7 +1,7 @@
 package de.claudioaltamura.kotlin.examples
 
-import junit.framework.Assert.assertEquals
 import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
 class EnumExampleTest {
 

@@ -1,42 +1,49 @@
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 buildscript {
-  repositories {
-    jcenter()
-  }
 
-  dependencies {
-    classpath(kotlin("gradle-plugin", version = "1.3.60"))
-  }
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath(kotlin("gradle-plugin", version = "1.3.60"))
+    }
 }
 
 plugins {
-  kotlin("jvm") version "1.3.60"
-  eclipse
-  idea
+    kotlin("jvm") version "1.3.60"
+    eclipse
+    idea
+    id("com.diffplug.gradle.spotless") version "3.27.1"
 }
 
 repositories {
-  jcenter()
+    jcenter()
 }
 
 dependencies {
-  implementation(kotlin("stdlib"))
-  implementation("com.google.guava:guava:16.0")
+    implementation(kotlin("stdlib"))
 
-  testImplementation("org.assertj:assertj-core:3.12.2")
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.4.2")
+    testImplementation("org.assertj:assertj-core:3.15.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
 
-  testRuntime("org.junit.jupiter:junit-jupiter-engine:5.4.2")
-  testImplementation(kotlin("test"))
-  testImplementation(kotlin("test-junit"))
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
+    testImplementation(kotlin("test"))
+    testImplementation(kotlin("test-junit"))
 }
 
 tasks {
-  test {
-    useJUnitPlatform()
-    testLogging {
-      events = setOf(TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.FAILED)
+    test {
+        useJUnitPlatform()
+        testLogging {
+            events = setOf(TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.FAILED)
+        }
     }
-  }
+}
+
+spotless {
+    kotlinGradle {
+        ktlint()
+    }
 }
