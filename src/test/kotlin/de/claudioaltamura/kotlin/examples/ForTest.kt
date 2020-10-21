@@ -65,4 +65,48 @@ class ForTest {
     assertEquals("cba", result)
   }
 
+  @Test
+  fun testUntil() {
+    var result = ""
+    for(i in 1 until 10) {
+      result += i
+    }
+
+    assertEquals("123456789", result)
+  }
+
+  @Test
+  fun elements() {
+    val seasons = arrayOf("spring", "summer", "autumn", "winter")
+
+    var result = ""
+    for(season in seasons) {
+      result += season
+    }
+
+    assertEquals("springsummerautumnwinter", result)
+  }
+
+  @Test
+  fun notIn() {
+    val seasons = arrayOf("spring", "summer", "autumn", "winter")
+
+    assertTrue("whatever" !in seasons)
+  }
+
+  @Test
+  fun indizes() {
+    val seasons = arrayOf("spring", "summer", "autumn", "winter")
+
+    var result = ""
+    for(index in seasons.indices) {
+      result += index
+    }
+
+    seasons.forEachIndexed({index, value -> println("$index: $value")})
+
+    assertEquals("0123", result)
+  }
+
+
 }
