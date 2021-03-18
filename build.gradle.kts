@@ -15,7 +15,8 @@ plugins {
     kotlin("jvm") version "1.3.60"
     eclipse
     idea
-    id("com.diffplug.gradle.spotless") version "3.27.1"
+    id("com.diffplug.spotless") version "5.11.0"
+    id("com.github.ben-manes.versions") version "0.38.0"
 }
 
 repositories {
@@ -25,7 +26,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
 
-    testImplementation("org.assertj:assertj-core:3.15.0")
+    testImplementation("org.assertj:assertj-core:3.19.0")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
 
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
