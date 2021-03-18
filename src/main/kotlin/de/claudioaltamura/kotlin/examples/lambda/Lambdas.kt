@@ -10,5 +10,5 @@ fun example() {
 
 fun anyEven(collection: Collection<Int>): Boolean {
   val pred: (Int) -> Boolean = {x -> x.rem(2) == 0}
-  return collection.any(pred);
+  return collection.any(pred)
 }
