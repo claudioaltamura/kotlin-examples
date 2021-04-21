@@ -37,7 +37,7 @@ class LambdasTest {
 	@Test
 	fun employeeMinBy() {
 		val employees = listOf(Employee("Peter", "Parker", 2017), Employee("Angelo", "Peter",2015))
-		val minBy = employees.minBy { e -> e.startYear }
+		val minBy = employees.minBy(Employee::startYear) //employees.minBy { e -> e.startYear }
 
 		assertEquals("Employee(firstName='Angelo', lastName='Peter', startYear=2015)", minBy.toString())
 	}
