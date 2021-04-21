@@ -3,7 +3,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 buildscript {
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -15,7 +15,7 @@ plugins {
     kotlin("jvm") version "1.3.60"
     eclipse
     idea
-    id("com.diffplug.spotless") version "5.11.0"
+    id("com.diffplug.spotless") version "5.12.2"
     id("com.github.ben-manes.versions") version "0.38.0"
 }
 
@@ -40,11 +40,5 @@ tasks {
         testLogging {
             events = setOf(TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.FAILED)
         }
-    }
-}
-
-spotless {
-    kotlinGradle {
-        ktlint()
     }
 }
