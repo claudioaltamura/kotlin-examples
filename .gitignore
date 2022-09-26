@@ -7,3 +7,7 @@ build
 /out/
 /todos.txt
 /.idea/
+.classpath
+.project
+.settings/org.eclipse.buildship.core.prefs
+.gitignore
