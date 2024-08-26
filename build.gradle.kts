@@ -1,22 +1,8 @@
-import org.gradle.api.tasks.testing.logging.TestLogEvent
-
-buildscript {
-
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath(kotlin("gradle-plugin", version = "1.3.60"))
-    }
-}
-
 plugins {
-    kotlin("jvm") version "1.3.60"
-    eclipse
-    idea
-    id("com.diffplug.spotless") version "5.12.2"
-    id("com.github.ben-manes.versions") version "0.38.0"
+    kotlin("jvm") version "2.0.20"
+    java
+    id("com.github.ben-manes.versions") version "0.51.0"
+    id("com.diffplug.spotless") version "6.19.0"
 }
 
 repositories {
@@ -26,19 +12,13 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
 
-    testImplementation("org.assertj:assertj-core:3.19.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
-
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
     testImplementation(kotlin("test"))
-    testImplementation(kotlin("test-junit"))
+
+    testImplementation("org.assertj:assertj-core:3.26.3")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
-tasks {
-    test {
-        useJUnitPlatform()
-        testLogging {
-            events = setOf(TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.FAILED)
-        }
-    }
+tasks.getByName<Test>("test") {
+    useJUnitPlatform()
 }
