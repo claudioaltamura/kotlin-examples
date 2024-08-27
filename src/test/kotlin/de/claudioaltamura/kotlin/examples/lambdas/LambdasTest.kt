@@ -1,8 +1,9 @@
 package de.claudioaltamura.kotlin.examples.lambdas
 
 import de.claudioaltamura.kotlin.examples.anyEven
+import de.claudioaltamura.kotlin.examples.filterEmployees
 import de.claudioaltamura.kotlin.examples.lambda.Employee
-import org.assertj.core.api.Assertions.assertThat
+
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
@@ -41,5 +42,13 @@ class LambdasTest {
 
 		assertEquals("Employee(firstName='Angelo', lastName='Peter', startYear=2015)", minBy.toString())
 	}
+
+    @Test
+    fun filterByYear() {
+        val employees = listOf(Employee("Peter", "Parker", 2017), Employee("Angelo", "Peter",2015))
+        val filterByYear = { e: Employee -> e.startYear == 2015 }
+
+        assertEquals(listOf(Employee("Angelo", "Peter",2015)), filterEmployees(employees, filterByYear))
+    }
 
 }
