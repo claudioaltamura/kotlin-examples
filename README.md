@@ -1,5 +1,9 @@
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/claudioaltamura/kotlin-examples/ci.yml?branch=main)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # kotlin-examples
-examples with kotlin
+kotlin examples
 
 * inheritance
 * abstract class
@@ -9,5 +13,7 @@ examples with kotlin
 * interface 
     * implementation
     * anonymous
-* try cactch    
+* try cactch 
+* lambda
+* collections
 
