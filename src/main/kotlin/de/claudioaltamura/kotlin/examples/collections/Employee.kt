@@ -1,4 +1,4 @@
-package de.claudioaltamura.kotlin.examples.lambda
+package de.claudioaltamura.kotlin.examples.collections
 
 data class Employee(val firstName: String, val lastName: String, val startYear: Int) {
 
