@@ -17,17 +17,17 @@ class CollectionsTest {
 
     @Test
     fun filterByYear() {
-        val filterByYear = { e: Employee -> e.startYear == 2015 }
+        val filterByYear = { e: Employee -> e.startYear == 2017 }
 
-        assertEquals(listOf(Employee("Angelo", "Peter", 2015)), filterEmployees(employees, filterByYear))
+        assertEquals(listOf(Employee("Peter", "Parker", 2017)), filterEmployees(employees, filterByYear))
     }
 
     @Test
     fun mapByYear() {
-        val filterByYear = { e: Employee -> e.startYear == 2015 }
+        val filterByYear = { e: Employee -> e.startYear == 2017 }
         val employeesMap = mapEmployees(filterByYear, employees)
 
-        assertThat(employeesMap[2015]).contains(Employee("Angelo", "Peter", 2015))
+        assertThat(employeesMap[2017]).contains(Employee("Peter", "Parker", 2017))
     }
 
 }
