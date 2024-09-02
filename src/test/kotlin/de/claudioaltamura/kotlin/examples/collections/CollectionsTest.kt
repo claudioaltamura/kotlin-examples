@@ -30,4 +30,13 @@ class CollectionsTest {
         assertThat(employeesMap[2017]).contains(Employee("Peter", "Parker", 2017))
     }
 
+    @Test
+    fun hashMapWithFlatMap() {
+        val employeeHashMap = employees.groupBy{it.startYear}
+        val employees2015 = employeeHashMap.filterKeys { it-> it == 2015 }
+        val employeeNames = employees2015.flatMap { employees -> employees.value }.map { employee -> employee.firstName }
+
+        assertThat(employeeNames).contains("Angelo", "Ollie")
+    }
+
 }
