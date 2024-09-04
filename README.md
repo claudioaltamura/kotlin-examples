@@ -16,4 +16,7 @@ kotlin examples
 * try cactch 
 * lambda
 * collections
+  * list
+  * map
+* exceptions 
 
