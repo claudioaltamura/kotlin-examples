@@ -19,4 +19,5 @@ kotlin examples
   * list
   * map
 * exceptions 
+* scoped functions
 
