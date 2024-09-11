@@ -5,3 +5,10 @@ fun multiplyFilterAndSum(numbers: MutableList<Int>): Int =
         it.sum()
     }
 
+fun plusAndSum(plus: Int, numbers: MutableList<Int>): Int {
+    //with(numbers)
+    val list = numbers.plus(plus)
+    return list.sum()
+}
+
+fun lengthOfString(str: String): Int = str.length
